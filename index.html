@@ -5,18 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
     <title>간단한 환율 계산기</title>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3227297094048919"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="container">
       <h1>간단한 환율 계산기</h1>
+
+      <!-- 금액 입력 필드 -->
       <input type="number" id="amount" placeholder="금액을 입력하세요" />
-      <div class="buttons">
-        <button onclick="convertCurrency('jpy')">일본 (JPY)</button>
-        <button onclick="convertCurrency('usd')">미국 (USD)</button>
-        <button onclick="convertCurrency('gbp')">영국 (GBP)</button>
+
+      <!-- 경고 메시지 표시 영역 -->
+      <p id="warning" class="warning-message" style="display: none">
+        금액을 입력하세요.
+      </p>
+
+      <!-- 기본 통화 선택 버튼 -->
+      <div class="currency-selection">
+        <h2>내 돈</h2>
+        <div class="buttons" id="base-currency-buttons">
+          <button onclick="selectBaseCurrency('krw')">한국 원 (KRW)</button>
+          <button onclick="selectBaseCurrency('jpy')">일본 엔 (JPY)</button>
+          <button onclick="selectBaseCurrency('usd')">미국 달러 (USD)</button>
+          <button onclick="selectBaseCurrency('gbp')">영국 파운드 (GBP)</button>
+          <button onclick="selectBaseCurrency('eur')">유로 (EUR)</button>
+        </div>
       </div>
+
+      <!-- 대상 통화 선택 버튼 -->
+      <div class="currency-selection">
+        <h2>바꿀 돈</h2>
+        <div class="buttons" id="target-currency-buttons">
+          <button onclick="selectTargetCurrency('krw')">한국 원 (KRW)</button>
+          <button onclick="selectTargetCurrency('jpy')">일본 엔 (JPY)</button>
+          <button onclick="selectTargetCurrency('usd')">미국 달러 (USD)</button>
+          <button onclick="selectTargetCurrency('gbp')">
+            영국 파운드 (GBP)
+          </button>
+          <button onclick="selectTargetCurrency('eur')">유로 (EUR)</button>
+        </div>
+      </div>
+
+      <!-- 변환 버튼 -->
+      <div class="buttons">
+        <button onclick="convertCurrency()">변환</button>
+      </div>
+
+      <!-- 결과 표시 영역 -->
       <div id="result"></div>
     </div>
+
     <script src="./script.js"></script>
   </body>
 </html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>간단한 환율 계산기</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>간단한 환율 계산기</h1>
+      <input type="number" id="amount" placeholder="금액을 입력하세요" />
+      <div class="buttons">
+        <button onclick="convertCurrency('jpy')">일본 (JPY)</button>
+        <button onclick="convertCurrency('usd')">미국 (USD)</button>
+        <button onclick="convertCurrency('gbp')">영국 (GBP)</button>
+      </div>
+      <div id="result"></div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
